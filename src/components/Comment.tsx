@@ -1,4 +1,5 @@
 import { HandsClapping, Trash } from 'phosphor-react'
+import { Avatar } from './Avatar';
 
 import styles from './Comment.module.css'
 
@@ -11,7 +12,7 @@ interface CommentProps {
 export default function Comment({ author, content, src }: CommentProps) {
   return (
     <div className={styles.comment}>
-            <img src={src} />
+            <Avatar hasBorder={false} src={src} />
 
             <div className={styles.commentBox}>
                 <div className={styles.commentContent}>

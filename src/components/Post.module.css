@@ -25,16 +25,6 @@
     gap: 1.6rem;
 }
 
-.author img {
-    box-sizing: initial;
-    object-fit: cover;
-    width: 6rem;
-    height: 6rem;
-    border-radius: 8px;
-    border: 4px solid var(--gray-800);
-    outline: 2px solid var(--orange-500);
-}
-
 .authorInfo strong {
     display: block;
     color: var(--gray-100);
@@ -118,7 +108,7 @@
 }
 
 .commentForm button[type=submit]:not(:disabled):hover {
-    background: var(--green-300);
+    opacity: 0.9;
 }
 
 .commentForm button[type=submit]:disabled {

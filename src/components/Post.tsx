@@ -1,4 +1,5 @@
 import Comment from './Comment';
+import { Avatar } from './Avatar';
 
 import styles from './Post.module.css';
 
@@ -11,11 +12,7 @@ export default function Post() {
     <article className={styles.post}>
         <header>
             <div className={styles.author}>
-                <img 
-                    src={redWitchImg} 
-                    alt="Mulher ruiva fazendo biquinho"
-                    className={styles.avatar} 
-                />
+                <Avatar hasBorder src={redWitchImg} />
                 <div className={styles.authorInfo}>
                     <strong>Winifred Sanderson</strong>
                     <span>Bruxa e cantora</span>
@@ -27,10 +24,10 @@ export default function Post() {
 
         <div className={styles.content}>
             <p>Olá, irmãs! 👋</p>
-            <p>Vou compartilhar com vocês um feitiço ótimo de rejuvenescimento...</p>
+            <p>Vou compartilhar com vocês um ótimo feitiço de rejuvenescimento 👸</p>
 
             <p>
-                🍵Coloque em um caldeirão: Sangue de coruja com erva vermelha, gire três vezes e acrescente um pelo de sobrancelha, uma pitada de pústula e o dedão de um homem morto (bem fresquinho). Depois, adicione saliva de lagartixa e um pedaço de sua língua.
+                🍵Em um caldeirão, colocar: sangue de coruja com erva vermelha, girar três vezes e acrescentar um pelo de sobrancelha, uma pitada de pústula e o dedão de um homem morto (bem fresquinho). Em seguida, adicionar saliva de lagartixa e um pedaço de sua língua.
             </p>
             <p>
                 Agora é só dar para a criança beber e correr pro abraço!
