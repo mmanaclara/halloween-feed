@@ -26,7 +26,6 @@
 }
 
 .author img {
-    margin-top: calc(0px - 3.6rem - 6px);
     box-sizing: initial;
     object-fit: cover;
     width: 6rem;
@@ -68,4 +67,65 @@
 
 .content a:hover {
     color: var(--orange-300);
+}
+
+.commentForm {
+    width: 100%;
+    margin-top: 2.4rem;
+    padding-top: 2.4rem;
+    border-top: 1px solid var(--gray-600);
+}
+
+.commentForm > strong {
+    line-height: 2.5rem;
+    color: var(--gray-100);
+}
+
+.commentForm textarea {
+    width: 100%;
+    background: var(--gray-900);
+    border: 0;
+    resize: none;
+    height: 9rem;
+    padding: 1.6rem;
+    border-radius: 8px;
+    color: var(--gray-100);
+    line-height: 2rem;
+    margin-top: 1.6rem;
+}
+
+.commentForm footer {
+    visibility: hidden;
+    max-height: 0;
+}
+
+.commentForm:focus-within footer {
+    visibility: visible;
+    max-height: none;
+}
+
+.commentForm button[type=submit] {
+    padding: 1.4rem 2.4rem;
+    margin-top: 1.6rem;
+    border-radius: 0.8rem;
+    border: 0;
+    background: var(--orange-500);
+    color: var(--white);
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: background-color 0.2s;
+}
+
+.commentForm button[type=submit]:not(:disabled):hover {
+    background: var(--green-300);
+}
+
+.commentForm button[type=submit]:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.commentList {
+    margin-top: 3.2rem;
 }
