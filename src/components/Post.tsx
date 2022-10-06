@@ -1,6 +1,10 @@
+import Comment from './Comment';
+
 import styles from './Post.module.css';
 
-import redWitchIcon from '../assets/mulher-ruiva-fazendo-biquinho.jpg'
+import redWitchImg from '../assets/mulher-ruiva-fazendo-biquinho.jpg'
+import witchImg from '../assets/mulher-com-batom-vermelho-olhando-para-cima.jpg'
+import boyImg from '../assets/garoto-loiro-com-camisa-branca.jpg'
 
 export default function Post() {
   return (
@@ -8,7 +12,7 @@ export default function Post() {
         <header>
             <div className={styles.author}>
                 <img 
-                    src={redWitchIcon} 
+                    src={redWitchImg} 
                     alt="Mulher ruiva fazendo biquinho"
                     className={styles.avatar} 
                 />
@@ -23,7 +27,7 @@ export default function Post() {
 
         <div className={styles.content}>
             <p>Olá, irmãs! 👋</p>
-            <p>Vou compartilhar com vocês um feitiço ótimo para rejuvenescer...</p>
+            <p>Vou compartilhar com vocês um feitiço ótimo de rejuvenescimento...</p>
 
             <p>
                 🍵Coloque em um caldeirão: Sangue de coruja com erva vermelha, gire três vezes e acrescente um pelo de sobrancelha, uma pitada de pústula e o dedão de um homem morto (bem fresquinho). Depois, adicione saliva de lagartixa e um pedaço de sua língua.
@@ -51,6 +55,11 @@ export default function Post() {
             </footer>
 
         </form>
+
+        <div className={styles.commentList}>
+            <Comment src={witchImg} author="Mary Sanderson" content="Ótimo feitiço, Wini! Testei e deu super certo! Você é demais! 👏" />
+            <Comment src={boyImg} author="Thackery Binx" content="Megera! Nem todas as crianças do mundo a farão jovem e bela! 🤮" />
+        </div>
 
     </article>
   )
