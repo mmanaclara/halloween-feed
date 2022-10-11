@@ -1,3 +1,4 @@
+import { ChangeEvent, FormEvent, InvalidEvent, useState } from 'react';
 import { format, formatDistanceToNow } from 'date-fns'
 import ptBR from 'date-fns/locale/pt-BR'
 
@@ -20,13 +21,34 @@ interface PostProps {
 }
 
 export default function Post({ author, content, publishedAt }: PostProps) {
+  const [comments, setComments] = useState(['Ótimo feitiço, Wini! Testei e deu super certo! Você é demais! 👏'])
+
+  const [newCommentText, setNewCommentText] = useState('')
+
   const publishedDateFormatted = format(publishedAt, "d 'de' LLLL 'às' HH:mm", {
     locale: ptBR,
   })  
+
   const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, {
     locale: ptBR,
     addSuffix: true,
   })
+
+  function handleCreateNewComment(event: FormEvent) {
+    event.preventDefault()
+
+    setComments([...comments, newCommentText]);
+    setNewCommentText('');
+  }
+
+  function handleNewCommentChange(event: ChangeEvent<HTMLTextAreaElement>) {
+    event.target.setCustomValidity('');
+    setNewCommentText(event.target.value);
+  }
+
+  function deleteComment(comment: any) {
+    console.log(`Deletar comentário ${comment}`)
+  }
 
   return (
     <article className={styles.post}>
@@ -52,11 +74,14 @@ export default function Post({ author, content, publishedAt }: PostProps) {
             })}
         </div>
 
-        <form className={styles.commentForm}>
+        <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
             <strong>Deixe seu feedback</strong>
 
             <textarea 
+                name='comment'
                 placeholder='Deixe um comentário'
+                value={newCommentText}
+                onChange={handleNewCommentChange}
             />
 
             <footer>
@@ -66,10 +91,21 @@ export default function Post({ author, content, publishedAt }: PostProps) {
         </form>
 
         <div className={styles.commentList}>
-            <Comment src={maryAvatar} author="Mary Sanderson" content="Ótimo feitiço, Wini! Testei e deu super certo! Você é demais! 👏" />
-            <Comment src={thackeryAvatar} author="Thackery Binx" content="Megera! Nem todas as crianças do mundo a farão jovem e bela! 🤮" />
+            {comments.map(comment => {
+                return (
+                    <Comment 
+                        key={comment}
+                        content={comment}
+                        onDeleteComment={deleteComment}
+                    />
+                )
+            })}     
         </div>
 
     </article>
   )
 }
+
+{/* <Comment src={maryAvatar} author="Mary Sanderson" content="Ótimo feitiço, Wini! Testei e deu super certo! Você é demais! 👏" />
+<Comment src={thackeryAvatar} author="Thackery Binx" content="Megera! Nem todas as crianças do mundo a farão jovem e bela! 🤮" /> */}
+

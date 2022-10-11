@@ -4,12 +4,19 @@ import { Avatar } from './Avatar';
 import styles from './Comment.module.css'
 
 interface CommentProps {
-    author: string;
-    content: string;
-    src: any;
+    author?: string;
+    content?: string;
+    src?: any;
+    onDeleteComment?: any; 
 }
 
-export default function Comment({ author, content, src }: CommentProps) {
+export default function Comment({ author, content, src, onDeleteComment }: CommentProps) {
+  function handleDeleteComment() {
+    console.log('deletar')
+  }
+
+  onDeleteComment(content)
+
   return (
     <div className={styles.comment}>
             <Avatar hasBorder={false} src={src} />
@@ -22,7 +29,7 @@ export default function Comment({ author, content, src }: CommentProps) {
                             <time title="19 de Junho às 17:22" dateTime="2022-06-19 17:22:00">Cerca de 1h atrás</time>
                             {content}
                         </div>
-                        <button title='Deletar comentário'>
+                        <button onClick={handleDeleteComment} title='Deletar comentário'>
                             <Trash size={24} />
                         </button>
                     </header>
