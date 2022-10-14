@@ -21,7 +21,7 @@ interface PostProps {
 }
 
 export default function Post({ author, content, publishedAt }: PostProps) {
-  const [comments, setComments] = useState(['Ótimo feitiço, Wini! Testei e deu super certo! Você é demais! 👏'])
+  const [comments, setComments] = useState(['Megera! Nem todas as crianças do mundo a farão jovem e bela! 🤮'])
 
   const [newCommentText, setNewCommentText] = useState('')
 
@@ -57,6 +57,8 @@ export default function Post({ author, content, publishedAt }: PostProps) {
 
     setComments(commentsWithoutDeletedOne);
   }
+
+  const isNewCommentEmpty = newCommentText.length === 0;
 
   return (
     <article className={styles.post}>
@@ -95,7 +97,7 @@ export default function Post({ author, content, publishedAt }: PostProps) {
             />
 
             <footer>
-                <button type="submit">Publicar</button>
+                <button type="submit" disabled={isNewCommentEmpty} >Publicar</button>
             </footer>
 
         </form>
@@ -107,6 +109,7 @@ export default function Post({ author, content, publishedAt }: PostProps) {
                         key={comment}
                         content={comment}
                         onDeleteComment={deleteComment}
+                        name={author.name}
                     />
                 )
             })}     
