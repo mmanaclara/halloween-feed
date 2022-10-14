@@ -8,7 +8,7 @@ import { Avatar } from './Avatar';
 import styles from './Post.module.css';
 
 interface Content {
-    type: 'paragraph' | 'link';
+    type: string;
     content: string;
 }
 

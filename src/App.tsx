@@ -19,7 +19,7 @@ const posts = [
     content: [
       { type: 'paragraph', content: "Olá, irmãs! 👋" },
       { type: 'paragraph', content: "Vou compartilhar com vocês um ótimo feitiço de rejuvenescimento 👸"},
-      { type: 'paragraph', content: "🍵Em um caldeirão, colocar: sangue de coruja com erva vermelha, girar três vezes e acrescentar um pelo de sobrancelha, uma pitada de pústula e o dedão de um homem morto (bem fresquinho). Em seguida, adicionar saliva de lagartixa e um pedaço de sua língua."},
+      { type: 'paragraph', content: "🍵Em um caldeirão, colocar sangue de coruja com erva vermelha, girar três vezes e acrescentar um pelo de sobrancelha, uma pitada de pústula e o dedão de um homem morto (bem fresquinho). Em seguida, adicionar saliva de lagartixa e um pedaço de sua língua."},
       { type: 'paragraph', content: "Agora é só dar para a criança beber e correr pro abraço!"},
       { type: 'paragraph', content: "Depois comentem o que acharam."},
       { type: 'link', content: "👉 wini.witch/hocuspocus"},
