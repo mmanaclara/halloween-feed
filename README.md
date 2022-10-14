@@ -17,7 +17,7 @@
 
 ## 💻 Projeto
 
-O Halloween Feed foi um projeto realizado com o objetivo de revisar fundamentos sobre componentes e propriedades no React. Ele consiste em um feed de postagens no qual as pessoas podem adicionar ou remover comentários. Além disso, é possível interagir com os comentários, clicando no botão "Aplaudir". 
+O Halloween Feed foi um projeto realizado com o objetivo de revisar os conceitos mais importantes do React, como componentização, propriedades, estados, imutabilidade e hooks. Além disso, aplicar o TypeScript para adicionar tipagem estática à aplicação. Ele consiste em um feed de postagens no qual as pessoas podem adicionar ou remover comentários, podendo interagir por meio do botão "Aplaudir".
 
 ## ✨ Tecnologias
 Essa aplicação foi desenvolvida com as seguintes tecnologias:
