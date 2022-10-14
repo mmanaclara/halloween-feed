@@ -7,8 +7,10 @@ import { Avatar } from './Avatar';
 
 import styles from './Post.module.css';
 
-import maryAvatar from '../assets/mulher-com-batom-vermelho-olhando-para-cima.jpg'
-import thackeryAvatar from '../assets/garoto-loiro-com-camisa-branca.jpg'
+interface Content {
+    type: 'paragraph' | 'link';
+    content: string;
+}
 
 interface PostProps {
     author: {
@@ -17,7 +19,7 @@ interface PostProps {
         avatarUrl: any;
     };
     publishedAt: Date;
-    content: any;
+    content: Content[];
 }
 
 export default function Post({ author, content, publishedAt }: PostProps) {
@@ -109,7 +111,6 @@ export default function Post({ author, content, publishedAt }: PostProps) {
                         key={comment}
                         content={comment}
                         onDeleteComment={deleteComment}
-                        name={author.name}
                     />
                 )
             })}     
@@ -118,7 +119,4 @@ export default function Post({ author, content, publishedAt }: PostProps) {
     </article>
   )
 }
-
-{/* <Comment src={maryAvatar} author="Mary Sanderson" content="Ótimo feitiço, Wini! Testei e deu super certo! Você é demais! 👏" />
-<Comment src={thackeryAvatar} author="Thackery Binx" content="Megera! Nem todas as crianças do mundo a farão jovem e bela! 🤮" /> */}
 

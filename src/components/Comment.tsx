@@ -8,12 +8,11 @@ import styles from './Comment.module.css'
 import thackeryAvatar from '../assets/garoto-loiro-com-camisa-branca.jpg'
 
 interface CommentProps {
-    name: string;
     content: string;
     onDeleteComment: (comment: string) => void;
 }
 
-export default function Comment({ name, content, onDeleteComment }: CommentProps) {
+export default function Comment({ content, onDeleteComment }: CommentProps) {
   const [likeCount, setLikeCount] = useState(0)
 
   function handleDeleteComment() {
@@ -21,8 +20,10 @@ export default function Comment({ name, content, onDeleteComment }: CommentProps
   }
 
   function handleLikeComment() {
-    setLikeCount(likeCount + 1)
-  }
+    setLikeCount((state) => {
+        return state + 1
+    })
+}
 
   return (
     <div className={styles.comment}>
@@ -32,7 +33,7 @@ export default function Comment({ name, content, onDeleteComment }: CommentProps
                 <div className={styles.commentContent}>
                     <header>
                         <div className={styles.authorAndTime}>
-                            <strong>{name}</strong>
+                            <strong>Thackery Binx</strong>
                             <time title="19 de Junho às 17:22" dateTime="2022-06-19 17:22:00">Cerca de 1h atrás</time>
                             {content}
                         </div>
