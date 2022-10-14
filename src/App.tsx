@@ -5,8 +5,8 @@ import Post from "./components/Post"
 import './global.css'
 import styles from './App.module.css'
 
-import * as maryImage from './assets/mulher-com-batom-vermelho-olhando-para-cima.jpg'
-import * as winiImage from './assets/mulher-ruiva-fazendo-biquinho.jpg'
+import maryImage from './assets/mulher-com-batom-vermelho-olhando-para-cima.jpg'
+import winiImage from './assets/mulher-ruiva-fazendo-biquinho.jpg'
 
 const posts = [
   {
@@ -14,7 +14,7 @@ const posts = [
     author: {
       name: "Winifred Sanderson",
       role: "Bruxa e cantora",
-      avatarUrl: {winiImage}
+      avatarUrl: winiImage,
     },
     content: [
       { type: 'paragraph', content: "Olá, irmãs! 👋" },
@@ -32,7 +32,7 @@ const posts = [
     author: {
       name: "Mary Sanderson",
       role: "Bruxa e couch",
-      avatarUrl: {maryImage},
+      avatarUrl: maryImage,
     },
     content: [
       { type: 'paragraph', content: "Olá, irmãs! 👋" },

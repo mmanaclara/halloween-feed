@@ -12,10 +12,8 @@ interface CommentProps {
 
 export default function Comment({ author, content, src, onDeleteComment }: CommentProps) {
   function handleDeleteComment() {
-    console.log('deletar')
+    onDeleteComment(content)
   }
-
-  onDeleteComment(content)
 
   return (
     <div className={styles.comment}>
@@ -40,7 +38,7 @@ export default function Comment({ author, content, src, onDeleteComment }: Comme
                 <footer>
                     <button>
                         <HandsClapping />
-                        Aplaudir <span>1993</span>
+                        Aplaudir <span>193</span>
                     </button>
                 </footer>
             </div>

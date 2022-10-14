@@ -46,8 +46,16 @@ export default function Post({ author, content, publishedAt }: PostProps) {
     setNewCommentText(event.target.value);
   }
 
-  function deleteComment(comment: any) {
-    console.log(`Deletar comentário ${comment}`)
+  function handleNewCommentInvalid(event: InvalidEvent<HTMLTextAreaElement>) {
+    event.target.setCustomValidity('Esse campo é obrigatório!');
+  }
+
+  function deleteComment(commentToDelete: string) {
+    const commentsWithoutDeletedOne = comments.filter(comment => {
+        return comment !== commentToDelete;
+    })
+
+    setComments(commentsWithoutDeletedOne);
   }
 
   return (
@@ -82,6 +90,8 @@ export default function Post({ author, content, publishedAt }: PostProps) {
                 placeholder='Deixe um comentário'
                 value={newCommentText}
                 onChange={handleNewCommentChange}
+                onInvalid={handleNewCommentInvalid}
+                required
             />
 
             <footer>
