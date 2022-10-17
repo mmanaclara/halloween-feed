@@ -4,8 +4,8 @@
 
 <p align="center">
   <img src="https://img.shields.io/static/v1?label=ReactJS&message=Ignite&color=F27108&labelColor=141716" alt="Trilha Ignite da Rocketseat" />
-  <img alt="Linguagem mais usada na aplicação" src="https://img.shields.io/github/languages/top/mmanaclara/halloween-feed?color=F27108&labelColor=141716">
-  <img alt="Contagem de linguagens usadas na aplicação" src="https://img.shields.io/github/languages/count/mmanaclara/halloween-feed?color=F27108&labelColor=141716">
+  <img alt="Linguagem mais usada na aplicação" src="https://img.shields.io/github/languages/top/mmanaclara/halloween-feed?color=F27108&labelColor=141716" />
+  <img alt="Contagem de linguagens usadas na aplicação" src="https://img.shields.io/github/languages/count/mmanaclara/halloween-feed?color=F27108&labelColor=141716" />
   <img alt="Último commit" src="https://img.shields.io/github/last-commit/mmanaclara/halloween-feed?color=F27108&labelColor=141716">
 </p>
 
